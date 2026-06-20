@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Generate repository status
+        run: python generate_status.py
+
       - name: Validate artifact schemas
         run: python validate_boundary_schemas.py
 
