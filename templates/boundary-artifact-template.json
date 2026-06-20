@@ -1,0 +1,36 @@
+{
+  "artifact_type": "example-boundary-artifact",
+  "artifact_version": "0.1.0",
+  "artifact_id": "replace-with-artifact-id",
+  "issuer": "replace-with-issuer",
+  "purpose": "Replace with the review purpose of this boundary artifact.",
+  "claims": [
+    {
+      "claim_id": "replace-with-claim-id",
+      "claim": "Replace with a claim that can be independently reviewed.",
+      "authority_class": "self-declaration"
+    }
+  ],
+  "non_claims": [
+    "This artifact does not claim external framework conformance.",
+    "This artifact does not claim interoperability.",
+    "This artifact does not claim adoption or endorsement.",
+    "This artifact does not inherit authority by adjacency.",
+    "This artifact does not grant execution authority."
+  ],
+  "authority_scope": {
+    "valid_for": [
+      "boundary review",
+      "independent discoverability review"
+    ],
+    "not_valid_for": [
+      "external framework conformance",
+      "runtime interoperability",
+      "delegated authority",
+      "execution authority",
+      "consequence authority"
+    ],
+    "inherits_authority_from": [],
+    "grants_authority_to": []
+  }
+}
