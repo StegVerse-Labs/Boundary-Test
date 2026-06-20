@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse-labs.example/schemas/boundary-artifact.schema.json",
+  "title": "Boundary Artifact",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "artifact_version",
+    "artifact_id",
+    "issuer",
+    "purpose",
+    "authority_scope"
+  ],
+  "properties": {
+    "artifact_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issuer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claims": {
+      "type": "array"
+    },
+    "non_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority_scope": {
+      "type": "object",
+      "required": [
+        "inherits_authority_from",
+        "grants_authority_to"
+      ],
+      "properties": {
+        "valid_for": {
+          "type": "array"
+        },
+        "not_valid_for": {
+          "type": "array"
+        },
+        "inherits_authority_from": {
+          "type": "array"
+        },
+        "grants_authority_to": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
