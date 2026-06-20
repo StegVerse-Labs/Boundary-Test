@@ -68,6 +68,7 @@ The path intentionally terminates before execution authority or consequence.
 Expected transition posture:
 
 - ADMIT for review
+- REVIEW-ONLY for GLM-adjacent comparison
 - PASS for independent discoverability
 - PASS for independent reviewability
 - PASS for boundary preservation
@@ -77,9 +78,19 @@ Expected transition posture:
 
 ## Expected SDK Output
 
+### REVIEW-ONLY: Comparable Without Conformance Claim
+
+Use when artifacts can be discovered, reviewed, and compared together, but no conformance, interoperability, adoption, delegation, execution authority, or shared authority claim is made.
+
+For the prepared GLM boundary exercise, this is the preferred top-level result when no boundary violation is detected:
+
+`REVIEW-ONLY: independently discoverable, independently reviewable, no authority inheritance detected.`
+
 ### PASS: Boundary Preserved
 
-Use when all artifacts remain independently discoverable, independently reviewable, and mutually non-authorizing.
+Use when all tested boundary conditions pass and all artifacts remain independently discoverable, independently reviewable, and mutually non-authorizing.
+
+PASS applies to boundary preservation only. It must not be presented as GLM conformance, GLM compatibility, StegVerse conformance, interoperability, adoption, or external endorsement.
 
 ### FAIL: Authority Inheritance Detected
 
@@ -101,11 +112,28 @@ Use when one artifact requires another artifact to be valid despite being presen
 
 Use when an artifact cannot be evaluated because claims, non-claims, or authority scope are missing.
 
+## GLM Test Outcome Rule
+
+For GLM-adjacent testing, the SDK must not report a bare `PASS` as the final user-facing conclusion.
+
+The SDK should report `REVIEW-ONLY` first, then include the boundary checks that passed or failed.
+
+Recommended form:
+
+```text
+REVIEW-ONLY: independently discoverable, independently reviewable, no authority inheritance detected.
+Boundary checks: PASS.
+Conformance claim: NOT MADE.
+Interoperability claim: NOT MADE.
+Adoption claim: NOT MADE.
+Execution authority: NOT GRANTED.
+```
+
 ## User Explanation Template
 
 When the SDK presents this option to a user, it should explain:
 
-> Boundary Test checks whether governance artifacts can be discovered and reviewed together without creating authority inheritance, interoperability assumptions, delegated authority, or execution authority. This test is for boundary review only. It does not prove runtime compatibility or conformance.
+> Boundary Test checks whether governance artifacts can be discovered and reviewed together without creating authority inheritance, interoperability assumptions, delegated authority, or execution authority. This test is for boundary review only. It does not prove runtime compatibility, GLM conformance, StegVerse conformance, adoption, or endorsement.
 
 ## Done Criteria
 
@@ -114,7 +142,8 @@ The SDK supports Boundary Test when:
 1. The option is visible to the user as `Boundary Test`.
 2. The user is told that the test is review-only.
 3. The user is told what inputs are accepted.
-4. The user is told what PASS and FAIL mean.
+4. The user is told what REVIEW-ONLY, PASS, FAIL, and INCOMPLETE mean.
 5. The SDK denies authority inheritance by default.
 6. The SDK denies interoperability by adjacency.
 7. The SDK can use this repository as the default fixture.
+8. The SDK does not present GLM-adjacent boundary preservation as GLM conformance.
