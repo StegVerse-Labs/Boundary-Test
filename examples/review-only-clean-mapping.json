@@ -1,0 +1,38 @@
+{
+  "artifact_type": "example-boundary-artifact",
+  "artifact_version": "0.1.0",
+  "artifact_id": "review-only-clean-mapping",
+  "issuer": "example:reviewer",
+  "purpose": "Demonstrate a clean review-only mapping that does not claim conformance, interoperability, adoption, delegation, or execution authority.",
+  "claims": [
+    {
+      "claim_id": "clean-mapping-001",
+      "claim": "This artifact can be independently reviewed as a boundary-mapping example.",
+      "authority_class": "self-declaration"
+    }
+  ],
+  "non_claims": [
+    "This artifact does not claim GLM conformance.",
+    "This artifact does not claim GLM compatibility.",
+    "This artifact does not claim adoption or endorsement.",
+    "This artifact does not claim runtime interoperability.",
+    "This artifact does not inherit authority by adjacency.",
+    "This artifact does not grant execution authority."
+  ],
+  "authority_scope": {
+    "valid_for": [
+      "review-only mapping example",
+      "boundary test demonstration"
+    ],
+    "not_valid_for": [
+      "GLM conformance",
+      "runtime interoperability",
+      "delegated authority",
+      "execution authority",
+      "consequence authority"
+    ],
+    "inherits_authority_from": [],
+    "grants_authority_to": []
+  },
+  "expected_boundary_test_result": "REVIEW_ONLY"
+}
