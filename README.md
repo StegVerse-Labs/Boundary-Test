@@ -4,7 +4,7 @@
 
 This repository is the neutral boundary-test fixture area for formal governance testing.
 
-All formal testing datasets must enter through the governed SDK ingestion path before they are routed into any demonstration, sandbox, standing-proof, or GLM boundary test. The required invariant is:
+All formal testing datasets must enter through the governed SDK ingestion path before they are routed into any demonstration, sandbox, standing-proof, runner, or GLM boundary test. The required invariant is:
 
 ```text
 StegVerse-org/StegVerse-SDK
@@ -14,9 +14,9 @@ StegVerse-org/StegVerse-SDK
 → route-specific result receipt
 ```
 
-This keeps input datasets manifest-bound and receipt-bound before any downstream test consumes them.
+This keeps every input dataset manifest-bound and receipt-bound before any downstream test consumes it. No formal test route should accept unbound datasets, fixtures, governance artifacts, GLM-style declarations, admissibility packets, sandbox task packets, or standing-proof artifacts.
 
-## Revised Formal Testing Route
+## Canonical Formal Testing Route
 
 ```text
 Dataset / fixture / governance artifact
@@ -24,6 +24,7 @@ Dataset / fixture / governance artifact
 → manifest + receipt binding
 → route declaration
 → one or more formal testing routes
+→ route-specific result receipt
 ```
 
 | Route | Repository | Purpose |
@@ -34,9 +35,21 @@ Dataset / fixture / governance artifact
 | Standing proof | `StegVerse-Labs/Standing-Proof-Engine` | Commit-time standing, stale-state replay, authority rebinding, and consequence-binding proof. |
 | GLM boundary case | `StegVerse-Labs/Boundary-Test` | Boundary declaration, non-claim preservation, and manifest composability validation after private-review-first concerns are resolved. |
 
+## Route Rule
+
+```text
+SDK ingests.
+GLM declares boundaries.
+Demo-suite demonstrates.
+Demo-suite-runner probes formalism behavior.
+Sandbox stresses.
+SPE proves standing.
+Receipts bind every transition.
+```
+
 ## GLM Test Case Posture
 
-The GLM boundary test case must be handled as an ingested formal test case, not as an isolated public claim.
+The GLM boundary test case must be handled as an SDK-ingested formal test case, not as an isolated public claim.
 
 ```text
 GLM-like boundary declaration
