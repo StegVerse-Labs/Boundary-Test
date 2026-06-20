@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Validate artifact schemas
+        run: python validate_boundary_schemas.py
+
       - name: Run review-only fixture
         run: python run_boundary_test.py
 
