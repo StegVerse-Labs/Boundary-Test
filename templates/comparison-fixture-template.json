@@ -1,0 +1,20 @@
+{
+  "fixture_type": "example-boundary-comparison-fixture",
+  "fixture_version": "0.1.0",
+  "test_name": "replace-with-test-name",
+  "artifacts": [
+    {
+      "artifact_id": "replace-with-artifact-id",
+      "path": "replace-with-artifact-path.json",
+      "expected_independently_discoverable": true
+    }
+  ],
+  "expected_results": {
+    "co_discovery_allowed": true,
+    "cross_reference_allowed": true,
+    "authority_inheritance_allowed": false,
+    "interoperability_claim_allowed": false,
+    "external_validity_dependency_allowed": false,
+    "expected_top_level_outcome": "REVIEW_ONLY"
+  }
+}
