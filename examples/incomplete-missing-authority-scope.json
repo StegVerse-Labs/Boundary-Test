@@ -1,0 +1,19 @@
+{
+  "artifact_type": "example-incomplete-boundary-artifact",
+  "artifact_version": "0.1.0",
+  "artifact_id": "incomplete-missing-authority-scope",
+  "issuer": "example:reviewer",
+  "purpose": "Demonstrate an incomplete artifact that cannot be evaluated because authority_scope is missing.",
+  "claims": [
+    {
+      "claim_id": "incomplete-001",
+      "claim": "This artifact intentionally omits authority_scope for INCOMPLETE outcome testing.",
+      "authority_class": "invalid-example"
+    }
+  ],
+  "non_claims": [
+    "This artifact is not a valid boundary artifact.",
+    "This artifact exists only to demonstrate INCOMPLETE handling."
+  ],
+  "expected_boundary_test_result": "INCOMPLETE"
+}
