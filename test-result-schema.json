@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Boundary Test Result",
+  "type": "object",
+  "required": ["top_level_outcome"],
+  "properties": {
+    "top_level_outcome": {
+      "enum": ["REVIEW_ONLY","PASS","FAIL","INCOMPLETE"]
+    },
+    "boundary_checks": {"type":"string"},
+    "summary": {"type":"string"},
+    "reasons": {
+      "type":"array",
+      "items":{"type":"string"}
+    }
+  }
+}
