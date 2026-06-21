@@ -31,3 +31,6 @@ jobs:
 
       - name: Run regression fixture set
         run: python run_boundary_regression.py
+
+      - name: Generate comparison report
+        run: python generate_comparison_report.py
