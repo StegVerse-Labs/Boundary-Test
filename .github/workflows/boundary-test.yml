@@ -34,3 +34,6 @@ jobs:
 
       - name: Generate comparison report
         run: python generate_comparison_report.py
+
+      - name: Generate export bundle
+        run: python generate_export_bundle.py
